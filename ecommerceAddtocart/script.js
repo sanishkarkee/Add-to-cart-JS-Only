@@ -1,4 +1,9 @@
-// 1) ------ Increment/Decrement ------
+// 1) ------ Increment/Decrement  && total amt after quantity selection ------
+
+var product_total_amt = document.getElementById('product_total_amt');
+var total_cart_amt = document.getElementById('total_cart_amt');
+var shipping_charge = document.getElementById('shipping_charge');
+// console.log(shipping_charge.innerHTML);
 
 const decreaseNumber = (incdec, itemprice) => {
   var itemval = document.getElementById(incdec);
@@ -16,6 +21,14 @@ const decreaseNumber = (incdec, itemprice) => {
 
     // --Price +/- according to quantity
     itemprice.innerHTML = parseInt(itemprice.innerHTML) - 15;
+
+    // -- Total amt after adding quantity
+    product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) - 15;
+
+    // --Total amt after shipping charge
+    total_cart_amt.innerHTML =
+      parseInt(product_total_amt.innerHTML) +
+      parseInt(shipping_charge.innerHTML);
   }
 };
 
@@ -34,6 +47,14 @@ const increaseNumber = (incdec, itemprice) => {
 
     // --Price +/- according to quantity
     itemprice.innerHTML = parseInt(itemprice.innerHTML) + 15;
+
+    // -- Total amt after adding quantity
+    product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) + 15;
+
+    // --Total amt after shipping charge
+    total_cart_amt.innerHTML =
+      parseInt(product_total_amt.innerHTML) +
+      parseInt(shipping_charge.innerHTML);
   }
 };
 
