@@ -9,6 +9,7 @@ const decreaseNumber = () => {
     itemval.value = 0;
   } else {
     itemval.value = parseInt(itemval.value) - 1;
+
     itemval.style.background = '#fff';
     itemval.style.color = '#000';
   }
@@ -16,9 +17,10 @@ const decreaseNumber = () => {
 
 const increaseNumber = () => {
   var itemval = document.getElementById('textbox');
-
+ 
   if (itemval.value >= 5) {
     itemval.value = 5;
+
     alert('Max 5 allowed');
     itemval.style.background = 'red';
     itemval.style.color = '#fff';
@@ -26,3 +28,33 @@ const increaseNumber = () => {
     itemval.value = parseInt(itemval.value) + 1;
   }
 };
+
+// -----------------------PRATICE--------------------------------
+
+// const decreaseNumber = () => {
+//   let itemval = document.getElementById('textbox');
+//   console.log(itemval.value);
+
+//   if (itemval.value <= 0) {
+//     itemval.value = 0;
+//   } else {
+//     itemval.value = parseInt(itemval.value) - 1;
+
+//     itemval.style.background = '#fff';
+//     itemval.style.color = '#000';
+//   }
+// };
+
+// const increaseNumber = () => {
+//   let itemval = document.getElementById('textbox');
+
+//   if (itemval.value >= 5) {
+//     itemval.value = 5;
+
+//     alert('Maxiumum 5 allowed!');
+//     itemval.style.background = 'red';
+//     itemval.style.color = '#fff';
+//   } else {
+//     itemval.value = parseInt(itemval.value) + 1;
+//   }
+// };
