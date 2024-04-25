@@ -4,6 +4,8 @@ var product_total_amt = document.getElementById('product_total_amt');
 var total_cart_amt = document.getElementById('total_cart_amt');
 var shipping_charge = document.getElementById('shipping_charge');
 // console.log(shipping_charge.innerHTML);
+var discountCode = document.getElementById('discount_code1');
+console.log(discountCode.value);
 
 const decreaseNumber = (incdec, itemprice) => {
   var itemval = document.getElementById(incdec);
@@ -56,6 +58,26 @@ const increaseNumber = (incdec, itemprice) => {
       parseInt(product_total_amt.innerHTML) +
       parseInt(shipping_charge.innerHTML);
   }
+};
+
+// ------ Discount Code ------
+const discount_code = () => {
+  // --- aile samma ko total amt fetch gareko
+  let totalamtcurrent = parseInt(total_cart_amt.innerHTML);
+  let error_trw = document.getElementById('error_trw');
+
+  if (discountCode.value === 'thapa') {
+    let newtotalamt = totalamtcurrent - 10;
+    total_cart_amt.innerHTML = newtotalamt;
+    error_trw.innerHTML = 'Code is applied';
+  } else {
+    error_trw.innerHTML = 'Try again!!!';
+  }
+
+  // if (discountCode.value != 'thapa') {
+  //   alert('No such discount code exists!');
+  // } else {
+  // }
 };
 
 // -----------------------PRATICE--------------------------------
